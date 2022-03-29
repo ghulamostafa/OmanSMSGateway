@@ -11,7 +11,11 @@ namespace OmanSMSGateway.ExampleConsole
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello Oman SMS Gateway!" + Environment.NewLine);
+
             IServiceCollection services = new ServiceCollection();
+
+            //Begin: iSmart SMS
 
             services.AddiSmartSMSService(
                     new SMSCredentials()
@@ -22,9 +26,9 @@ namespace OmanSMSGateway.ExampleConsole
                     }
                 );
 
-            Console.WriteLine("Hello Oman SMS Gateway!" + Environment.NewLine);
-
             SendiSmartSMS(services);
+
+            //End: iSmart SMS
 
             Console.ReadLine();
         }
