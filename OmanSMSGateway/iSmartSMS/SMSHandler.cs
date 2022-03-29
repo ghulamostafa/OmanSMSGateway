@@ -44,7 +44,7 @@ namespace OmanSMSGateway.iSmartSMS
         public async Task<SMSResponse> SendSMS(SMSRequest smsModel)
         {
             var mobileNumbers = "";
-            
+
             foreach (var mobileNumber in smsModel.MobileNumbers)
             {
                 mobileNumbers += mobileNumber + ",";
@@ -64,7 +64,7 @@ namespace OmanSMSGateway.iSmartSMS
             var response = await _httpClient.GetAsync(_baseURL + payLoad);
             var content = await response.Content.ReadAsStringAsync();
             var isValidCode = int.TryParse(content, out var code);
-            
+
             return new SMSResponse()
             {
                 Code = isValidCode ? code : 0,

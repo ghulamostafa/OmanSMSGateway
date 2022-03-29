@@ -23,9 +23,9 @@ namespace OmanSMSGateway.ExampleConsole
                 );
 
             Console.WriteLine("Hello Oman SMS Gateway!" + Environment.NewLine);
-            
+
             SendiSmartSMS(services);
-            
+
             Console.ReadLine();
         }
 
