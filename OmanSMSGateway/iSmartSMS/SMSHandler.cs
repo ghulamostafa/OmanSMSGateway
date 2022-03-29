@@ -59,7 +59,7 @@ namespace OmanSMSGateway.iSmartSMS
             payLoad += "&MobileNo=" + mobileNumbers;
             payLoad += "&Message=" + smsModel.Message;
             payLoad += "&PushDateTime=" + smsModel.PushDateTime;
-            payLoad += "&Lang=" + (smsModel.Language == Language.English ? "0" : "64");
+            payLoad += "&Lang=" + (smsModel.Language == Language.Arabic ? "64" : "0");
 
             var response = await _httpClient.GetAsync(_baseURL + payLoad);
             var content = await response.Content.ReadAsStringAsync();
@@ -69,7 +69,7 @@ namespace OmanSMSGateway.iSmartSMS
             {
                 Code = isValidCode ? code : 0,
                 Message = _responseCodes[isValidCode ? code : 0],
-                Success = isValidCode
+                Success = code == 1,
             };
         }
     }
