@@ -65,12 +65,9 @@ namespace OmanSMSGateway.iSmartSMS
             var content = await response.Content.ReadAsStringAsync();
             var isValidCode = int.TryParse(content, out var code);
 
-            return new SMSResponse()
-            {
-                Code = isValidCode ? code : 0,
-                Message = _responseCodes[isValidCode ? code : 0],
-                Success = code == 1,
-            };
+            code = isValidCode ? code : 0;
+
+            return new SMSResponse(code == 1, code, _responseCodes[code]);
         }
     }
 }
