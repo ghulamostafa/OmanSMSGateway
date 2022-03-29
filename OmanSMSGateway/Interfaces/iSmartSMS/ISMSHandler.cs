@@ -5,6 +5,6 @@ namespace OmanSMSGateway.Interfaces.iSmartSMS
 {
     public interface ISMSHandler
     {
-        Task<SMSResponse> SendSMS(SMSRequest smsModel);
+        Task<SMSResponse> SendSMSAsync(SMSRequest smsModel);
     }
 }

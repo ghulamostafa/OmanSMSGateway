@@ -37,7 +37,7 @@ namespace OmanSMSGateway.ExampleConsole
         {
             var smsService = services.BuildServiceProvider().GetService<ISMSHandler>();
             var resp = await smsService
-                            .SendSMS(new SMSRequest("Hello Oman", new List<string>() { "96893936914" }, Language.English));
+                            .SendSMSAsync(new SMSRequest("Hello Oman", new List<string>() { "96893936914" }, Language.English));
 
             Console.WriteLine("Code: " + resp.Code);
             Console.WriteLine("Message: " + resp.Message);

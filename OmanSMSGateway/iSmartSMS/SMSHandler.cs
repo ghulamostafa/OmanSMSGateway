@@ -41,7 +41,7 @@ namespace OmanSMSGateway.iSmartSMS
             _httpClient = httpClient;
         }
 
-        public async Task<SMSResponse> SendSMS(SMSRequest smsModel)
+        public async Task<SMSResponse> SendSMSAsync(SMSRequest smsModel)
         {
             var mobileNumbers = "";
 
