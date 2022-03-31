@@ -11,7 +11,7 @@ namespace OmanSMSGateway.Infrastructure
     {
         public static IServiceCollection AddiSmartSMSService(this IServiceCollection services, SMSCredentials smsCredentials)
         {
-            services.AddHttpClient("OmanNetClient", client =>
+            services.AddHttpClient("OmanSMSGatewayClient", client =>
             {
                 client.Timeout = TimeSpan.FromSeconds(240);
             });
